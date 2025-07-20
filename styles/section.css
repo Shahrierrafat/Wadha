@@ -1,0 +1,313 @@
+   body {
+      background: #fafbfc;
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 100;
+      letter-spacing: 0.1px;
+      opacity: 0.6;
+      margin-bottom: 22px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+    }
+
+    .image-section {
+      flex: 1.25 1 480px;
+      min-width: 240px;
+      padding: 38px 18px;
+      background: #f5f6fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-img-wrapper {
+      width: 100%;
+      max-width: 440px;
+      height: 540px;
+      margin-bottom: 28px;
+      background: #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      cursor: zoom-in;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[id^="img1"]:checked~.container .main-img-1,
+    input[id^="img2"]:checked~.container .main-img-2,
+    input[id^="img3"]:checked~.container .main-img-3 {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(1.06);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .color-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .color-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2.2px solid #e7e7e7;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+      transition: border 0.22s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      outline: none;
+      opacity: 0.96;
+    }
+
+    .color-dot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      opacity: 0.94;
+    }
+
+    input[id^="img1"]:checked~.container .color-bar label[for^="img1"],
+    input[id^="img2"]:checked~.container .color-bar label[for^="img2"],
+    input[id^="img3"]:checked~.container .color-bar label[for^="img3"] {
+      border: 2.2px solid #5c5c5c;
+      opacity: 1;
+    }
+
+    /* --- CENTER .fabric-section and .fabric-list --- */
+    .fabric-section {
+      flex: 1.8 1 560px;
+      min-width: 200px;
+      max-width: 430px;
+      padding: 45px 36px 36px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* <-- makes contents centered horizontally */
+      justify-content: flex-start;
+      background: none;
+    }
+
+    .fabric-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 320px;
+      /* <-- set a max-width */
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* <-- centers .fabric-item children */
+    }
+
+    .fabric-item {
+      width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .fabric-radio {
+      display: none;
+    }
+
+    .fabric-label {
+      display: block;
+      background: rgba(200, 200, 200, 0.16);
+      color: #212121;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 300;
+      opacity: 0.88;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0;
+      transition: background 0.15s, opacity 0.14s;
+      user-select: none;
+      outline: none;
+      border: none;
+    }
+
+    .fabric-radio:checked+.fabric-label,
+    .fabric-label:focus {
+      background: rgba(180, 180, 180, 0.18);
+      opacity: 1;
+    }
+
+    /* child-list plain centered, no border or shadow */
+    .child-list {
+      background: none;
+      margin: 0;
+      padding: 7px 0 0 0;
+      border-radius: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .fabric-radio:checked+.fabric-label+.child-list {
+      display: flex;
+    }
+
+    .child-list li {
+      font-size: 12px;
+      color: #232323;
+      font-weight: 300;
+      margin: 0 0 4px 0;
+      padding: 2px 10px;
+      min-width: 36px;
+      background: none;
+      border: none;
+      border-radius: 0;
+      text-align: center;
+      display: block;
+      cursor: pointer;
+      opacity: 0.83;
+      transition: color 0.13s, opacity 0.13s;
+    }
+
+    .child-list li:hover {
+      color: #000;
+      opacity: 1;
+    }
+
+    /* Modal, responsive, ... (as before) */
+    .zoom-overlay {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      inset: 0;
+      background: rgba(20, 20, 20, 0.93);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .zoom-img-box {
+      position: relative;
+      max-width: 98vw;
+      max-height: 98vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .zoom-img {
+      display: none;
+      max-width: 95vw;
+      max-height: 92vh;
+      border-radius: 14px;
+      background: #222;
+      box-shadow: 0 8px 48px rgba(0, 0, 0, 0.30);
+    }
+
+    input[type="checkbox"]:checked~.zoom-overlay {
+      display: flex;
+    }
+
+    input[id^="img1"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-1,
+    input[id^="img2"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-2,
+    input[id^="img3"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-3 {
+      display: block;
+    }
+
+    .close-zoom {
+      position: absolute;
+      top: -38px;
+      right: 0;
+      font-size: 2.5rem;
+      color: #fff;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      filter: drop-shadow(0 0 8px #111);
+      z-index: 10;
+    }
+
+    @media (max-width:900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .fabric-section {
+        max-width: 94vw;
+        padding: 26px 3vw;
+      }
+
+      .main-img-wrapper {
+        max-width: 320px;
+        height: 240px;
+      }
+
+      .fabric-list {
+        max-width: 360px;
+      }
+    }
+
+    @media (max-width:600px) {
+      .main-img-wrapper {
+        max-width: 95vw;
+        height: 70vw;
+        min-height: 90px;
+      }
+
+      .fabric-list {
+        max-width: 98vw;
+      }
+
+      .fabric-label {
+        font-size: 14px;
+      }
+
+      .child-list li {
+        font-size: 12px;
+      }
+    }
