@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer2024</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/section.css">
+</head>
+<body>
+    <header>
+  <div class="logo-container">
+            <img class="wadha_logo" src="images/wadha.logo.jpg" alt="">
+        </div>
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </header>
+    <main>
+<!-- ========= 1ST PRODUCT SECTION ========= -->
+  <section>
+    <input type="radio" name="imgslide-1" id="img1-1" checked>
+    <input type="radio" name="imgslide-1" id="img2-1">
+    <input type="radio" name="imgslide-1" id="img3-1">
+    <input type="checkbox" id="zoom-modal-1">
+
+    <div class="container">
+      <div class="image-section">
+        <h3>Roundneckline button embellished dress</h3>
+        <div class="main-img-wrapper">
+          <label for="zoom-modal-1" style="width:100%;height:100%;display:block;cursor:zoom-in;">
+            <img class="main-img main-img-1" src="images/Summer2024/Roundneckline button-embellished dress-VIEW1.webp" alt="">
+            <img class="main-img main-img-2" src="images/Summer2024/Roundneckline button-embellished dress-VIEW2.webp" alt="">
+            <img class="main-img main-img-3" src="images/Summer2024/Roundneckline button-embellished dress-VIEW3.webp" alt="">
+          </label>
+        </div>
+        <div class="color-bar">
+          <label class="color-dot" for="img1-1" title="Black Velvet">
+            <img src="images/Summer2024/Roundneckline button-embellished dress-VIEW1.webp" alt="">
+          </label>
+          <label class="color-dot" for="img2-1" title="Beige">
+            <img src="images/Summer2024/Roundneckline button-embellished dress-VIEW2.webp" alt="">
+          </label>
+          <label class="color-dot" for="img3-1" title="Metallic">
+            <img src="images/Summer2024/Roundneckline button-embellished dress-VIEW3.webp" alt="">
+          </label>
+        </div>
+      </div>
+      <div class="fabric-section">
+        <ul class="fabric-list">
+          <li class="fabric-item">
+            <input type="radio" name="fabric-1" id="fabric-1a" class="fabric-radio">
+            <label for="fabric-1a" class="fabric-label" tabindex="0">CREPE</label>
+            <ul class="child-list"><li>BLACK</li><li>RED</li><li>CORAL</li></ul>
+          </li>
+          <li class="fabric-item">
+            <input type="radio" name="fabric-1" id="fabric-1b" class="fabric-radio">
+            <label for="fabric-1b" class="fabric-label" tabindex="0">SILK FAILLE</label>
+            <ul class="child-list"><li>BLACK</li><li>BIANCO</li><li>NAVY</li><li>RED</li></ul>
+          </li>
+           <li class="fabric-item">
+            <input type="radio" name="fabric-1" id="fabric-1c" class="fabric-radio">
+            <label for="fabric-1c" class="fabric-label" tabindex="0">SILK WOOL</label>
+            <ul class="child-list"><li>BLACK</li><li>OFF WHITE</li></ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="zoom-overlay">
+      <div class="zoom-img-box">
+        <label for="zoom-modal-1" class="close-zoom" title="Close">&times;</label>
+        <img class="zoom-img zoom-img-1" src="images/Summer2024/Roundneckline button-embellished dress-VIEW1.webp" alt="">
+        <img class="zoom-img zoom-img-2" src="images/Summer2024/Roundneckline button-embellished dress-VIEW2.webp" alt="">
+        <img class="zoom-img zoom-img-3" src="images/Summer2024/Roundneckline button-embellished dress-VIEW3.webp" alt="">
+      </div>
+    </div>
+  </section>
+ <!-- ========= 2ND PRODUCT SECTION ========= -->
+  <section>
+    <input type="radio" name="imgslide-2" id="img1-2" checked>
+    <input type="radio" name="imgslide-2" id="img2-2">
+    <input type="radio" name="imgslide-2" id="img3-2">
+    <input type="checkbox" id="zoom-modal-2">
+
+    <div class="container">
+      <div class="image-section">
+        <h3>Classic jacket with highwaisted pencil skirt</h3>
+        <div class="main-img-wrapper">
+          <label for="zoom-modal-2" style="width:100%;height:100%;display:block;cursor:zoom-in;">
+            <img class="main-img main-img-1" src="images/Summer2024/Classic jacket with highwaisted pencil skirt-VIEW1.webp" alt="">
+          </label>
+        </div>
+        <div class="color-bar">
+          <label class="color-dot" for="img1-2" title="View 1">
+            <img src="images/Summer2024/Classic jacket with highwaisted pencil skirt-VIEW1.webp" alt="">
+          </label>
+        </div>
+      </div>
+      <div class="fabric-section">
+        <ul class="fabric-list">
+          <li class="fabric-item">
+            <input type="radio" name="fabric-2" id="fabric-2a" class="fabric-radio">
+            <label for="fabric-2a" class="fabric-label" tabindex="0">CREPE</label>
+            <ul class="child-list"><li>BLACK</li><li>RED</li><li>CORAL</li></ul>
+          </li>
+          <li class="fabric-item">
+            <input type="radio" name="fabric-2" id="fabric-2b" class="fabric-radio">
+            <label for="fabric-2b" class="fabric-label" tabindex="0">SILK SATIN/SILK CREPE</label>
+            <ul class="child-list"><li>BLACK</li><li>OFF WHITE</li></ul>
+          </li>
+           <li class="fabric-item">
+            <input type="radio" name="fabric-2" id="fabric-2c" class="fabric-radio">
+            <label for="fabric-2c" class="fabric-label" tabindex="0">SILK WOOL</label>
+            <ul class="child-list"><li>BLACK</li><li>OFF WHITE</li></ul>
+          </li>
+          <li class="fabric-item">
+            <input type="radio" name="fabric-2" id="fabric-2d" class="fabric-radio">
+            <label for="fabric-2d" class="fabric-label" tabindex="0">SILK FAILLE</label>
+            <ul class="child-list"><li>BLACK</li><li>BIANCO</li><li>NAVY</li><li>RED</li></ul>
+          </li>
+          <li class="fabric-item">
+            <input type="radio" name="fabric-2" id="fabric-2e" class="fabric-radio">
+            <label for="fabric-2e" class="fabric-label" tabindex="0">QUILT</label>
+            <ul class="child-list"><li>BLACK</li><li>BEIGE</li><li>BLACK VELVET</li><li>NAVY VELVET</li></ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="zoom-overlay">
+      <div class="zoom-img-box">
+        <label for="zoom-modal-2" class="close-zoom" title="Close">&times;</label>
+        <img class="zoom-img zoom-img-1" src="images/Summer2024/Classic jacket with highwaisted pencil skirt-VIEW1.webp" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+    </main>
+
+    <script>
+    function goBack() {
+  if (window.history.length > 1 && document.referrer !== "") {
+    window.history.back();
+  } else {
+    window.location.href = 'collections.html'; // Change '' to actual fallback URL
+  }
+}
+  </script>
+
+</body>
+</html>

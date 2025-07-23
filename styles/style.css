@@ -44,7 +44,103 @@ body {
     max-width: 600px; /* Set a max width for the container */
     margin: 0 auto; /* Center it horizontally */
     padding: 20px; /* Add some padding around the container */
+    
 }
+/* HOMEPAGE SECTION  */
+
+/* Ensure section takes at least viewport height, with padding */
+.homepage {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 40px 0;
+}
+
+/* Product List Container */
+.homepage .product-list-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  padding: 0 20px;
+}
+
+.homepage .list-box {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage .list-box li {
+  margin: 0 0 18px 0;
+}
+
+.homepage .list-items {
+  display: block;
+  width: 100%;
+  padding: 18px 0;
+  background: #f4f4f4;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  /* subtle shadow for clickable look */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: all 0.3s;
+  letter-spacing: 1px;
+}
+.homepage .list-items:hover,
+.homepage .list-items:focus {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Responsive Video Container */
+.homepage .video-flex-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+.homepage video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  max-height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .homepage .list-items {
+    font-size: 15px;
+    padding: 13px 0;
+  }
+  .homepage .product-list-container {
+    padding: 0 4px;
+  }
+  .homepage video {
+    max-height: 220px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .homepage .list-items {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+}
+
 
 .list-box {
     text-align: center;
@@ -138,7 +234,7 @@ div > ul > a:hover {
   color: #333;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -169,7 +265,7 @@ div > ul > a:hover {
 
   .row-item {
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
