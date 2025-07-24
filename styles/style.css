@@ -7,45 +7,55 @@
 
 body {
   font-family: 'SackersGothic', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 
 /* Header Section */
 .wadha_logo {
-    width: 120px; /* Reduced logo width */
-    height: auto;
-    max-width: 100%; /* Ensure the logo does not overflow its container */
+  width: 120px;
+  /* Reduced logo width */
+  height: auto;
+  max-width: 100%;
+  /* Ensure the logo does not overflow its container */
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
 }
 
 /* Media Query for Tablets and Larger Screens */
 @media (min-width: 600px) {
-    .wadha_logo {
-        width: 150px; /* Increase logo size slightly on larger screens */
-    }
+  .wadha_logo {
+    width: 150px;
+    /* Increase logo size slightly on larger screens */
+  }
 }
 
 /* Media Query for Small Mobile Devices */
 @media (max-width: 400px) {
-    .wadha_logo {
-        width: 100px; /* Make logo smaller on very small screens */
-    }
+  .wadha_logo {
+    width: 100px;
+    /* Make logo smaller on very small screens */
+  }
 }
 
 /* Products list */
 .product-list-container {
-    max-width: 600px; /* Set a max width for the container */
-    margin: 0 auto; /* Center it horizontally */
-    padding: 20px; /* Add some padding around the container */
-    
+  max-width: 600px;
+  /* Set a max width for the container */
+  margin: 0 auto;
+  /* Center it horizontally */
+  padding: 20px;
+  /* Add some padding around the container */
+
 }
+
 /* HOMEPAGE SECTION  */
 
 /* Ensure section takes at least viewport height, with padding */
@@ -88,10 +98,11 @@ body {
   border-radius: 6px;
   text-decoration: none;
   /* subtle shadow for clickable look */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: all 0.3s;
   letter-spacing: 1px;
 }
+
 .homepage .list-items:hover,
 .homepage .list-items:focus {
   background: #333;
@@ -110,12 +121,13 @@ body {
   align-items: center;
   padding: 0 10px;
 }
+
 .homepage video {
   width: 100%;
   height: auto;
   border-radius: 12px;
   background: #ddd;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   max-height: 400px;
 }
 
@@ -125,9 +137,11 @@ body {
     font-size: 15px;
     padding: 13px 0;
   }
+
   .homepage .product-list-container {
     padding: 0 4px;
   }
+
   .homepage video {
     max-height: 220px;
     border-radius: 8px;
@@ -143,68 +157,79 @@ body {
 
 
 .list-box {
-    text-align: center;
-    list-style: none;
-    padding: 0;
+  text-align: center;
+  list-style: none;
+  padding: 0;
 }
 
 .list-items {
-    display: block;
-    margin: 20px 0; /* Vertical spacing between items */
-    padding: 15px 0;
-    font-size: 18px; /* Default font size */
-    font-weight: bold;
-    background-color: #f4f4f4;
-    color: #333;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 20px 0;
+  /* Vertical spacing between items */
+  padding: 15px 0;
+  font-size: 18px;
+  /* Default font size */
+  font-weight: bold;
+  background-color: #f4f4f4;
+  color: #333;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hover effect */
 .list-items:hover {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 
-div > ul > a {
-    text-decoration: none;
-    display: block;
+div>ul>a {
+  text-decoration: none;
+  display: block;
 }
 
 /* Hover effect for the anchor tag */
-div > ul > a:hover {
-    text-decoration: none;
+div>ul>a:hover {
+  text-decoration: none;
 }
 
 /* Media Query for Tablets and Larger Screens */
 @media (min-width: 600px) {
-    .list-items {
-        font-size: 20px; /* Increase font size on larger screens */
-        margin: 30px 0; /* Larger margin for spacing on bigger screens */
-        padding: 20px 0; /* Larger padding on bigger screens */
-    }
+  .list-items {
+    font-size: 20px;
+    /* Increase font size on larger screens */
+    margin: 30px 0;
+    /* Larger margin for spacing on bigger screens */
+    padding: 20px 0;
+    /* Larger padding on bigger screens */
+  }
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
-    .product-list-container {
-        padding: 10px; /* Reduce padding on mobile */
-    }
+  .product-list-container {
+    padding: 10px;
+    /* Reduce padding on mobile */
+  }
 
-    .list-items {
-        font-size: 16px; /* Smaller font size on mobile */
-        padding: 12px 0; /* Reduce padding */
-        margin: 10px 0; /* Reduce vertical margin */
-    }
+  .list-items {
+    font-size: 16px;
+    /* Smaller font size on mobile */
+    padding: 12px 0;
+    /* Reduce padding */
+    margin: 10px 0;
+    /* Reduce vertical margin */
+  }
 }
 
 /* Extra Small Mobile Devices */
 @media (max-width: 400px) {
-    .list-items {
-        font-size: 14px; /* Even smaller font size on very small devices */
-        padding: 10px 0; /* Adjust padding further for smaller screens */
-    }
+  .list-items {
+    font-size: 14px;
+    /* Even smaller font size on very small devices */
+    padding: 10px 0;
+    /* Adjust padding further for smaller screens */
+  }
 }
 
 /* COLLECTIONS SECTION */
@@ -239,7 +264,8 @@ div > ul > a:hover {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   text-align: center;
-  white-space: nowrap; /* Prevents line break in item */
+  white-space: nowrap;
+  /* Prevents line break in item */
 }
 
 /* Hover Effect */
@@ -276,85 +302,139 @@ div > ul > a:hover {
     padding: 12px 20px;
   }
 }
+
 /* BACK BUTTON */
 
 .back-button {
-    position: fixed;
-    top: 30px;
-    left: 30px;
-    z-index: 1000;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    transform-origin: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    animation: pulse 2s infinite;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform-origin: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite;
 }
+
 .back-button::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(45deg, #ffffff, #fffdf9);
-    z-index: -1;
-    border-radius: 50%;
-    transition: all 0.4s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffffff, #fffdf9);
+  z-index: -1;
+  border-radius: 50%;
+  transition: all 0.4s ease;
 }
+
 .back-button::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(45deg, #ffffff, #ffffff);
-    z-index: -2;
-    border-radius: 50%;
-    transform: scale(0.9);
-    opacity: 0.8;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffffff, #ffffff);
+  z-index: -2;
+  border-radius: 50%;
+  transform: scale(0.9);
+  opacity: 0.8;
 }
+
 .back-button i,
 .back-button svg {
-    font-size: 24px;
-    color: #c1a162; /* gold for luxury */
-    transition: all 0.3s ease;
+  font-size: 24px;
+  color: #c1a162;
+  /* gold for luxury */
+  transition: all 0.3s ease;
 }
+
 .back-button:hover {
-    transform: translateX(-5px) scale(1.05);
+  transform: translateX(-5px) scale(1.05);
 }
+
 .back-button:hover i,
 .back-button:hover svg {
-    color: #886016;
-    transform: scale(1.2);
+  color: #886016;
+  transform: scale(1.2);
 }
+
 .back-button:hover::before {
-    transform: rotate(10deg) scale(1.1);
+  transform: rotate(10deg) scale(1.1);
 }
+
 .back-button:active {
-    transform: translateX(-5px) scale(0.95);
+  transform: translateX(-5px) scale(0.95);
 }
+
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(5, 3, 3, 0.08); }
-    70% { box-shadow: 0 0 0 15px rgba(210, 195, 170, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(210, 195, 170, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(5, 3, 3, 0.08);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(210, 195, 170, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(210, 195, 170, 0);
+  }
 }
+
 @media (max-width: 600px) {
-    .back-button {
-        top: 15px;
-        left: 15px;
-        width: 50px;
-        height: 50px;
-    }
-    .back-button i,
-    .back-button svg {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-    }
+  .back-button {
+    top: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .back-button i,
+  .back-button svg {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* footer */
+/* Remove default margin and border */
+footer, .footer-section {
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* Footer Styles */
+footer {
+  width: 100vw;
+  min-height: 48px;
+  padding: 0;
+  color: #000000;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Footer content styling */
+.footer-section {
+  font-size: clamp(10px, 3vw, 12px);  /* Responsive font size */
+  font-weight: 200;
+  letter-spacing: 0.03em;
+  margin: 0;           /* Make sure no margin is used */
+  border: none;        /* Remove border if any */
 }
