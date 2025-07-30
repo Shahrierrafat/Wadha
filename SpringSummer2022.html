@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpringSummer2022</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/section.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img class="wadha_logo" src="images/wadha.logo.jpg" alt="">
+    </div>
+    <button class="back-button" onclick="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </header>
+
+  <div id="dressSections"></div>
+  <footer>
+    <small class="footer-section">© 2025, WADHA.CO</small>
+  </footer>
+  <script>
+    //each can have any number of images and unique fabric options!
+    const dressSections = [
+      // 1-section
+      {
+        title: "sleeveless top matched with midi wrap skirt with light geometric pattern",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/sleeveless top matched with midi wrap skirt with light geometric pattern-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 2-section
+      {
+        title: "hooded top with midi circle skirt",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/hooded top with midi circle skirt-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 3-section
+      {
+        title: "hooded pleated jacket",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/hooded pleated jacket-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 4-section
+      {
+        title: "parka Jacket matched with midi circle skirt",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/parka Jacket matched with midi circle skirt-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 5-section
+      {
+        title: "hooded maxi dress with geometric pattern",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/hooded maxi dress with geometric pattern-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+        // 6-section
+      {
+        title: "wrap trench dress",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/wrap trench dress1-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 7-section
+      {
+        title: "wrap trench dress",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/wrap trench dress2-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 8-section
+      {
+        title: "classic top to match maxi wrap skirt with full geometric embellishment",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/classic top to match maxi wrap skirt with full geometric embellishment-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 9-section
+      {
+        title: "hooded top matched with voluminous high waisted skirt",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/hooded top matched with voluminous high waisted skirt-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 10-section
+      {
+        title: "asymmetric voluminous gown with side tie",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/asymmetric voluminous gown with side tie-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 11-section
+      {
+        title: "hooded top with voluminous high waisted skirt",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/hooded top with voluminous high waisted skirt-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 12-section
+      {
+        title: "asymmetric top with side cape tie & voluminous high waisted skirt with front hidden pockets",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/asymmetric top with side cape tie & voluminous high waisted skirt with front hidden pockets-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 13-section
+      {
+        title: "sleeveless hooded jumpsuit",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/sleeveless hooded jumpsuit-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 14-section
+      {
+        title: "wrap cape",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/wrap cape-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 15-section
+      {
+        title: "open back corset top with midi circle skirt",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/open back corset top with midi circle skirt-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 16-section
+      {
+        title: "hooded maxi dress",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2022/hooded maxi dress-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      
+
+    ];
+
+
+    (function generateDressSections(sections) {
+      const container = document.getElementById('dressSections');
+      container.innerHTML = '';
+      sections.forEach((section, idx) => {
+        const sectionId = (idx + 1);
+        const slideName = "imgslide-" + sectionId;
+        const fabricName = "fabric-" + sectionId;
+        const zoomModalId = "zoom-modal-" + sectionId;
+        // 1. Gallery radio buttons + zoom modal
+        let imgRadios = section.views.map((_, i) =>
+          `<input type="radio" name="${slideName}" id="img${i + 1}-${sectionId}" ${i === 0 ? "checked" : ""}>`
+        ).join("\n") + `<input type="checkbox" id="${zoomModalId}">`;
+        // 2. Main images
+        let mainImgs = section.views.map((view, i) =>
+          `<img class="main-img main-img-${i + 1}" src="${section.imageBase}${view}" alt="">`
+        ).join('\n');
+        // 3. Color bar selectors
+        let colorDots = section.views.map((view, i) =>
+          `<label class="color-dot" for="img${i + 1}-${sectionId}" title="${section.viewTitles[i] || `View ${i + 1}`}">
+            <img src="${section.imageBase}${view}" alt="">
+          </label>`
+        ).join('\n');
+        // 4. Fabric choices
+        let fabricList = section.fabrics.map((fabric, i) => `
+          <li class="fabric-item">
+            <input type="radio" name="${fabricName}" id="${fabricName}${String.fromCharCode(97 + i)}" class="fabric-radio">
+            <label for="${fabricName}${String.fromCharCode(97 + i)}" class="fabric-label" tabindex="0">${fabric.name}</label>
+            <ul class="child-list">
+              ${fabric.colors.map(color => `<li>${color}</li>`).join('')}
+            </ul>
+          </li>
+        `).join('\n');
+        // 5. Zoom modal images
+        let zoomImgs = section.views.map((view, i) =>
+          `<img class="zoom-img zoom-img-${i + 1}" src="${section.imageBase}${view}" alt="">`
+        ).join('\n');
+        // 6. Compose complete section
+        container.innerHTML += `
+        <section>
+          ${imgRadios}
+          <div class="container">
+            <div class="image-section">
+              <h3>${section.title}</h3>
+              <div class="main-img-wrapper">
+                <label for="${zoomModalId}" style="width:100%;height:100%;display:block;cursor:zoom-in;">
+                  ${mainImgs}
+                </label>
+              </div>
+              <div class="color-bar">
+                ${colorDots}
+              </div>
+            </div>
+            <div class="fabric-section">
+              <ul class="fabric-list">
+                ${fabricList}
+              </ul>
+            </div>
+          </div>
+          <div class="zoom-overlay">
+            <div class="zoom-img-box">
+              <label for="${zoomModalId}" class="close-zoom" title="Close">&times;</label>
+              ${zoomImgs}
+            </div>
+          </div>
+        </section>`;
+      });
+    })(dressSections);
+    //  back button
+    function goBack() {
+      if (window.history.length > 1 && document.referrer !== "") {
+        window.history.back();
+      } else {
+        window.location.href = 'collections.html'; // Change '' to actual fallback URL
+      }
+    }
+
+  </script>
+</body>
+
+</html>

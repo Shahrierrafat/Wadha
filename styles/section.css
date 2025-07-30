@@ -122,7 +122,7 @@
 
  .color-dot:hover,
  .color-dot:focus {
-   border: 2.2px solid #ffffff;
+   border: 2.2px solid #5c5c5c;
    background: #f0f0f0;
    opacity: 1;
    transition: border 0.15s, background 0.15s, opacity 0.13s;
@@ -375,4 +375,22 @@
    .child-list li {
      font-size: 12px;
    }
+ }
+/* ...fabric name hover after select... */
+ .fabric-label {
+   /* ...your other styles... */
+   transition: background 0.15s, color 0.15s, opacity 0.14s;
+ }
+
+ .fabric-label:hover,
+ .fabric-label:focus {
+   background:#474545;
+   color: #fff9f9;
+   opacity: 1;
+ }
+
+ .fabric-radio:checked+.fabric-label {
+   background:#474545;
+   color: #fff9f9;
+   opacity: 1;
  }

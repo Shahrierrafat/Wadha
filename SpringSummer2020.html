@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpringSummer2020</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/section.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img class="wadha_logo" src="images/wadha.logo.jpg" alt="">
+    </div>
+    <button class="back-button" onclick="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </header>
+
+  <div id="dressSections"></div>
+  <footer>
+    <small class="footer-section">© 2025, WADHA.CO</small>
+  </footer>
+  <script>
+    //each can have any number of images and unique fabric options!
+    const dressSections = [
+      // 1-section
+      {
+        title: "parka voluminous gown with hood",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/parka voluminous gown with hood-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 2-section
+      {
+        title: "wrap paneled dress",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/wrap paneled dress-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 3-section
+      {
+        title: "cropped parka",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/cropped parka-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 4-section
+      {
+        title: "oversized jacket",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/oversized jacket-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 5-section
+      {
+        title: "paneled coat",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/paneled coat-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 6-section
+      {
+        title: "wrap jacket",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/wrap jacket-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 7-section
+      {
+        title: "cross back",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/cross back-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 8-section
+      {
+        title: "blazer with side slits",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/blazer with side slits-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 9-section
+      {
+        title: "shoulder tie voluminous gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/shoulder tie voluminous gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 10-section
+      {
+        title: "off shoulder back tie gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/off shoulder back tie gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 11-section
+      {
+        title: "oversized floor length coat",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/oversized floor length coat-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 12-section
+      {
+        title: "square neckline voluminous gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/square neckline voluminous gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 13-section
+      {
+        title: "puffed sleeves voluminous open back gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/puffed sleeves voluminous open back gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 14-section
+      {
+        title: "paneled dress",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/paneled dress-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 15-section
+      {
+        title: "long blazer with side slits",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/long blazer with side slits-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 16-section
+      {
+        title: "full embelished gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/full embelished gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      // 17-section
+      {
+        title: "puffed sleeve wrap dress",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/puffed sleeve wrap dress-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 18-section
+      {
+        title: "cape gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/cape gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 19-section
+      {
+        title: "voluminous crossed back gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/voluminous crossed back gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 20-section
+      {
+        title: "off shoulder voluminous gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/off shoulder voluminous gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 21-section
+      {
+        title: "full embellished square neckline voluminous gown",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/full embellished square neckline voluminous gown-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 22-section
+      {
+        title: "puffed sleeves cape (gown not included)",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/puffed sleeves cape (gown not included)-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+       // 23-section
+      {
+        title: "Square neckline fitted gown (cape not included)",
+        viewTitles: ["View 1", "View 2","View 3"],
+        imageBase: "images/spring-summer-2020/Square neckline fitted gown (cape not included)-",
+        views: ["VIEW1.webp", "VIEW2.webp","VIEW3.webp"],
+        fabrics: [
+          
+        ]
+      },
+      
+    ];
+
+
+    (function generateDressSections(sections) {
+      const container = document.getElementById('dressSections');
+      container.innerHTML = '';
+      sections.forEach((section, idx) => {
+        const sectionId = (idx + 1);
+        const slideName = "imgslide-" + sectionId;
+        const fabricName = "fabric-" + sectionId;
+        const zoomModalId = "zoom-modal-" + sectionId;
+        // 1. Gallery radio buttons + zoom modal
+        let imgRadios = section.views.map((_, i) =>
+          `<input type="radio" name="${slideName}" id="img${i + 1}-${sectionId}" ${i === 0 ? "checked" : ""}>`
+        ).join("\n") + `<input type="checkbox" id="${zoomModalId}">`;
+        // 2. Main images
+        let mainImgs = section.views.map((view, i) =>
+          `<img class="main-img main-img-${i + 1}" src="${section.imageBase}${view}" alt="">`
+        ).join('\n');
+        // 3. Color bar selectors
+        let colorDots = section.views.map((view, i) =>
+          `<label class="color-dot" for="img${i + 1}-${sectionId}" title="${section.viewTitles[i] || `View ${i + 1}`}">
+            <img src="${section.imageBase}${view}" alt="">
+          </label>`
+        ).join('\n');
+        // 4. Fabric choices
+        let fabricList = section.fabrics.map((fabric, i) => `
+          <li class="fabric-item">
+            <input type="radio" name="${fabricName}" id="${fabricName}${String.fromCharCode(97 + i)}" class="fabric-radio">
+            <label for="${fabricName}${String.fromCharCode(97 + i)}" class="fabric-label" tabindex="0">${fabric.name}</label>
+            <ul class="child-list">
+              ${fabric.colors.map(color => `<li>${color}</li>`).join('')}
+            </ul>
+          </li>
+        `).join('\n');
+        // 5. Zoom modal images
+        let zoomImgs = section.views.map((view, i) =>
+          `<img class="zoom-img zoom-img-${i + 1}" src="${section.imageBase}${view}" alt="">`
+        ).join('\n');
+        // 6. Compose complete section
+        container.innerHTML += `
+        <section>
+          ${imgRadios}
+          <div class="container">
+            <div class="image-section">
+              <h3>${section.title}</h3>
+              <div class="main-img-wrapper">
+                <label for="${zoomModalId}" style="width:100%;height:100%;display:block;cursor:zoom-in;">
+                  ${mainImgs}
+                </label>
+              </div>
+              <div class="color-bar">
+                ${colorDots}
+              </div>
+            </div>
+            <div class="fabric-section">
+              <ul class="fabric-list">
+                ${fabricList}
+              </ul>
+            </div>
+          </div>
+          <div class="zoom-overlay">
+            <div class="zoom-img-box">
+              <label for="${zoomModalId}" class="close-zoom" title="Close">&times;</label>
+              ${zoomImgs}
+            </div>
+          </div>
+        </section>`;
+      });
+    })(dressSections);
+    //  back button
+    function goBack() {
+      if (window.history.length > 1 && document.referrer !== "") {
+        window.history.back();
+      } else {
+        window.location.href = 'collections.html'; // Change '' to actual fallback URL
+      }
+    }
+
+  </script>
+</body>
+
+</html>
