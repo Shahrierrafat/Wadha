@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeatherBags</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/section.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img class="wadha_logo" src="images/wadha.logo.jpg" alt="">
+        </div>
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </header>
+
+    <div id="dressSections"></div>
+    <footer>
+        <small class="footer-section">© 2025, WADHA.CO</small>
+    </footer>
+    <script>
+        //each can have any number of images and unique fabric options!
+        const dressSections = [
+            // 1-section
+            {
+                title: "mini structured bag with removable strap",
+                viewTitles: ["View 1", "View 2"],
+                imageBase: "images/BAGS/leather-bags/mini structured bag with removable strap-",
+                views: ["VIEW1.webp", "VIEW2.webp"],
+                fabrics: [
+                    { name: "CAMEL", colors: [] },
+                    { name: "TAUPE", colors: [] },
+                    { name: "OLIVE", colors: [] },
+                    { name: "MAROON", colors: [] },
+                ]
+            },
+            // 2-section
+            {
+                title: "hexagon bag",
+                viewTitles: ["View 1"],
+                imageBase: "images/BAGS/leather-bags/hexagon bag-",
+                views: ["VIEW1.webp"],
+                fabrics: [
+                    { name: "CAMEL", colors: [] }
+
+                ]
+            },
+            // 3-section
+            {
+                title: "micro bag",
+                viewTitles: ["View 1", "View 1", "View 1"],
+                imageBase: "images/BAGS/leather-bags/micro bag-",
+                views: ["VIEW1.webp", "VIEW2.webp", "VIEW3.webp"],
+                fabrics: [
+                    { name: "TAUPE", colors: [] },
+                    { name: "CAMEL", colors: [] },
+                    { name: "MAROON", colors: [] }
+
+                ]
+            },
+            // 4-section
+            {
+                title: "lanyard phone case",
+                viewTitles: ["View 1", "View 1", "View 1"],
+                imageBase: "images/BAGS/leather-bags/lanyard phone case-",
+                views: ["VIEW1.webp", "VIEW2.webp", "VIEW3.webp"],
+                fabrics: [
+                    { name: "WHITE", colors: [] },
+                    { name: "NAVY", colors: [] },
+                    { name: "MAROON", colors: [] },
+                    { name: "TAUPE", colors: [] },
+                    { name: "CAMEL", colors: [] }
+
+                ]
+            },
+             // 5-section
+            {
+                title: "mini structured bag",
+                viewTitles: ["View 1", "View 1"],
+                imageBase: "images/BAGS/leather-bags/mini structured bag-",
+                views: ["VIEW1.webp", "VIEW2.webp"],
+                fabrics: [
+                    { name: "OFF-WHITE", colors: [] },
+                    { name: "BURGUNDY", colors: [] },
+                    { name: "NAVY", colors: [] }
+
+                ]
+            },
+            // 6-section
+            {
+                title: "belt bag",
+                viewTitles: ["View 1"],
+                imageBase: "images/BAGS/leather-bags/belt bag-",
+                views: ["VIEW1.webp"],
+                fabrics: [
+                    { name: "TAUPE", colors: [] },
+                    { name: "OFF-WHITE", colors: [] },
+                    { name: "CAMEL", colors: [] },
+                    { name: "BURGUNDY", colors: [] },
+                    { name: "NAVY", colors: [] }
+
+                ]
+            },
+             // 7-section
+            {
+                title: "pouch bag with hand wrist strap",
+                viewTitles: ["View 1","View 2"],
+                imageBase: "images/BAGS/leather-bags/pouch bag with hand wrist strap-",
+                views: ["VIEW1.webp","VIEW2.webp"],
+                fabrics: [
+                    { name: "WHITE", colors: [] },
+                    { name: "CAMEL", colors: [] }
+                ]
+            },
+            // 8-section
+            {
+                title: "triple belt bag",
+                viewTitles: ["View 1","View 2"],
+                imageBase: "images/BAGS/leather-bags/triple belt bag-",
+                views: ["VIEW1.webp","VIEW2.webp"],
+                fabrics: [
+                    { name: "OLIVE", colors: [] },
+                    
+                ]
+            },
+            // 9-section
+            {
+                title: "big bag",
+                viewTitles: ["View 1","View 2"],
+                imageBase: "images/BAGS/leather-bags/big bag-",
+                views: ["VIEW1.webp","VIEW2.webp"],
+                fabrics: [
+                    { name: "TAUPE", colors: [] },
+                    { name: "OFF-WHITE", colors: [] },
+                    { name: "CAMEL", colors: [] },
+                    { name: "BURGUNDY", colors: [] },
+                    { name: "NAVY", colors: [] }
+                    
+                ]
+            },
+
+        ];
+
+
+        (function generateDressSections(sections) {
+            const container = document.getElementById('dressSections');
+            container.innerHTML = '';
+            sections.forEach((section, idx) => {
+                const sectionId = (idx + 1);
+                const slideName = "imgslide-" + sectionId;
+                const fabricName = "fabric-" + sectionId;
+                const zoomModalId = "zoom-modal-" + sectionId;
+                // 1. Gallery radio buttons + zoom modal
+                let imgRadios = section.views.map((_, i) =>
+                    `<input type="radio" name="${slideName}" id="img${i + 1}-${sectionId}" ${i === 0 ? "checked" : ""}>`
+                ).join("\n") + `<input type="checkbox" id="${zoomModalId}">`;
+                // 2. Main images
+                let mainImgs = section.views.map((view, i) =>
+                    `<img class="main-img main-img-${i + 1}" src="${section.imageBase}${view}" alt="">`
+                ).join('\n');
+                // 3. Color bar selectors
+                let colorDots = section.views.map((view, i) =>
+                    `<label class="color-dot" for="img${i + 1}-${sectionId}" title="${section.viewTitles[i] || `View ${i + 1}`}">
+            <img src="${section.imageBase}${view}" alt="">
+          </label>`
+                ).join('\n');
+                // 4. Fabric choices
+                let fabricList = section.fabrics.map((fabric, i) => `
+          <li class="fabric-item">
+            <input type="radio" name="${fabricName}" id="${fabricName}${String.fromCharCode(97 + i)}" class="fabric-radio">
+            <label for="${fabricName}${String.fromCharCode(97 + i)}" class="fabric-label" tabindex="0">${fabric.name}</label>
+            <ul class="child-list">
+              ${fabric.colors.map(color => `<li>${color}</li>`).join('')}
+            </ul>
+          </li>
+        `).join('\n');
+                // 5. Zoom modal images
+                let zoomImgs = section.views.map((view, i) =>
+                    `<img class="zoom-img zoom-img-${i + 1}" src="${section.imageBase}${view}" alt="">`
+                ).join('\n');
+                // 6. Compose complete section
+                container.innerHTML += `
+        <section>
+          ${imgRadios}
+          <div class="container">
+            <div class="image-section">
+              <h3>${section.title}</h3>
+              <div class="main-img-wrapper">
+                <label for="${zoomModalId}" style="width:100%;height:100%;display:block;cursor:zoom-in;">
+                  ${mainImgs}
+                </label>
+              </div>
+              <div class="color-bar">
+                ${colorDots}
+              </div>
+            </div>
+            <div class="fabric-section">
+              <ul class="fabric-list">
+                ${fabricList}
+              </ul>
+            </div>
+          </div>
+          <div class="zoom-overlay">
+            <div class="zoom-img-box">
+              <label for="${zoomModalId}" class="close-zoom" title="Close">&times;</label>
+              ${zoomImgs}
+            </div>
+          </div>
+        </section>`;
+            });
+        })(dressSections);
+        //  back button
+        function goBack() {
+            if (window.history.length > 1 && document.referrer !== "") {
+                window.history.back();
+            } else {
+                window.location.href = 'bags.html'; // Change '' to actual fallback URL
+            }
+        }
+
+    </script>
+</body>
+
+</html>
