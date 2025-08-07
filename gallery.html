@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ExoticBags-Colors-Gallery</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+   
+    body {
+      margin: 0;
+      background: #fff;
+      color: #1a1a1a;
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Heading style */
+    h1 {
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 2rem;
+      position: relative;
+      color: #2a2a2a;
+      user-select: text;
+      opacity: 0.8;
+    }
+    h1::after {
+      content: '';
+      display: block;
+      margin: 0.75rem auto 0 auto;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #b38f68, transparent);
+      border-radius: 1px;
+    }
+
+    /* Container for the grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* Each gallery item */
+    .gallery-item {
+      background: transparent;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(179, 143, 104, 0.15);
+      cursor: pointer;
+      text-align: center;
+      padding: 1rem;
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .gallery-item:hover {
+      box-shadow: 0 12px 36px rgba(179, 143, 104, 0.25);
+    }
+
+    /* Images in gallery */
+    .gallery-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
+      background: transparent;
+      display: block;
+    }
+
+    /* Color name label */
+    .gallery-label {
+  font-weight: 600;
+  font-variant: small-caps;
+  font-size: 0.85rem;        /* smaller font size */
+  color: rgba(73, 71, 71, 0.8); /* gray color with opacity */
+  letter-spacing: 0.04em;
+  user-select: none;
+  margin-top: 0.25rem;      /* optional spacing */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img class="wadha_logo" src="images/wadha.logo.jpg" alt="Wadha Logo" />
+    </div>
+    <button class="back-button" onclick="goBack()" aria-label="Go back">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </header>
+
+  <h1>exotic-bags colors gallery</h1>
+
+  
+
+  <div class="gallery-grid" id="galleryGrid"></div>
+ <!-- footer -->
+  <footer>
+    <small class="footer-section">© 2025, WADHA.CO</small>
+  </footer>
+  <script>
+    // Your same colorRefs array as in main selector page
+    const colorRefs = [
+      { image: 'images/BAGS/exotic-bags/Color-01.png', name: 'color ref 2025-01-01' },
+      { image: 'images/BAGS/exotic-bags/Color-02.png', name: 'color ref 2025-01-02' },
+      { image: 'images/BAGS/exotic-bags/Color-03.png', name: 'color ref 2025-01-03' },
+      { image: 'images/BAGS/exotic-bags/Color-04.png', name: 'color ref 2025-01-04' },
+      { image: 'images/BAGS/exotic-bags/Color-05.png', name: 'color ref 2025-01-05' },
+      { image: 'images/BAGS/exotic-bags/Color-06.png', name: 'color ref 2025-01-06' },
+      { image: 'images/BAGS/exotic-bags/Color-07.png', name: 'color ref 2025-07-07' },
+      { image: 'images/BAGS/exotic-bags/Color-08.png', name: 'color ref 2025-07-08' },
+      { image: 'images/BAGS/exotic-bags/Color-09.png', name: 'color ref 2025-07-09' },
+      { image: 'images/BAGS/exotic-bags/Color-10.png', name: 'color ref 2025-07-10' },
+      { image: 'images/BAGS/exotic-bags/Color-11.png', name: 'color ref 2025-07-11' },
+      { image: 'images/BAGS/exotic-bags/Color-12.png', name: 'color ref 2025-07-12' },
+      { image: 'images/BAGS/exotic-bags/Color-13.png', name: 'color ref 2025-07-13' },
+      { image: 'images/BAGS/exotic-bags/Color-14.png', name: 'color ref 2025-07-14' },
+      { image: 'images/BAGS/exotic-bags/Color-15.png', name: 'color ref 2025-07-15' },
+      { image: 'images/BAGS/exotic-bags/Color-16.png', name: 'color ref 2025-07-16' },
+      { image: 'images/BAGS/exotic-bags/Color-17.png', name: 'color ref 2025-07-17' },
+      { image: 'images/BAGS/exotic-bags/Color-18.png', name: 'color ref 2025-07-18' },
+      { image: 'images/BAGS/exotic-bags/Color-19.png', name: 'color ref 2025-07-19' },
+      { image: 'images/BAGS/exotic-bags/Color-20.png', name: 'color ref 2025-07-20' },
+      { image: 'images/BAGS/exotic-bags/Color-21.png', name: 'color ref 2025-07-21' }
+    ];
+
+    const galleryGrid = document.getElementById('galleryGrid');
+
+    // Build the gallery grid dynamically
+    colorRefs.forEach(color => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+
+      const img = document.createElement('img');
+      img.src = color.image;
+      img.alt = color.name;
+      img.className = 'gallery-image';
+
+      const label = document.createElement('div');
+      label.className = 'gallery-label';
+      label.textContent = color.name;
+
+      item.appendChild(img);
+      item.appendChild(label);
+
+      galleryGrid.appendChild(item);
+    });
+
+    function goBack() {
+      if (window.history.length > 1 && document.referrer !== "") {
+        window.history.back();
+      } else {
+        window.location.href = 'ExoticBags.html'; // Set your fallback URL
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -10,7 +10,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
+/* button font */
+button {
+  font-family: 'SackersGothic', Arial, sans-serif;
+}
 
 /* Header Section */
 .wadha_logo {
@@ -438,3 +441,14 @@ footer {
   margin: 0;           /* Make sure no margin is used */
   border: none;        /* Remove border if any */
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeatherBags</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/section.css">
+  <style>
+  /* Reset & base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#viewGalleryBtn {
+  display: block;                  /* block-level for margin auto centering */
+  margin: 20px auto 60px auto;    /* top margin and larger bottom margin */
+  padding: 12px 32px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;         /* border matches text color */
+  background-color: #949191;      /* light gray background */
+  color: #000000;                    /* dark gray text */
+  opacity: 0.8;                   /* slight transparency */
+  max-width: 200px;               /* optional max width */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#viewGalleryBtn:hover,
+#viewGalleryBtn:focus {
+  background-color: #000000;      /* black background on hover */
+  color: #fff;                   /* white text on hover */
+  border-color: #000;            /* border turns black on hover */
+  outline: none;
+  opacity: 1;                    /* remove opacity on hover */
+}
+
+
+/* Exotic bags container */
+.exotic-bags-cover {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fafbfc;
+  padding: 10px 12px;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;  /* Added 30px bottom margin for spacing under images */
+}
+
+/* Exotic bag images */
+.exotic-bags-cover img {
+  width: 45%;               /* default for large screens */
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s ease;
+  background: #fff;
+  display: block;
+  cursor: pointer;
+}
+.exotic-bags-cover img:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Tablets and small laptops */
+@media (max-width: 900px) and (min-width: 601px) {
+  .exotic-bags-cover {
+    padding: 10px 10px;
+  }
+  .exotic-bags-cover img {
+    width: 65%;
+  }
+}
+
+/* Small devices (phones, small tablets) */
+@media (max-width: 600px) {
+  .exotic-bags-cover {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 10px;
+    margin-bottom: 20px;  /* slightly smaller bottom margin on small screens */
+  }
+  .exotic-bags-cover img {
+    width: 90%;
+    aspect-ratio: initial; /* reset for column layout */
+  }
+  #viewGalleryBtn {
+    max-width: 90%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin-bottom: 25px; /* consistent bottom margin */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .exotic-bags-cover img {
+    width: 95%;
+  }
+  .logo-container {
+    margin-top: 6px;
+    padding: 0 8px;
+  }
+  #viewGalleryBtn {
+    max-width: 95%;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img class="wadha_logo" src="images/wadha.logo.jpg" alt="Wadha Logo" />
+    </div>
+    <button class="back-button" onclick="goBack()" aria-label="Go back">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </header>
+
+
+
+  <div class="exotic-bags-cover">
+    <img src="images/BAGS/exotic-bags/ExoticBags-VIEW-f3.jpeg" alt="">
+    <img src="images/BAGS/exotic-bags/ExoticBags-VIEW-f2.jpeg" alt="">
+  </div>
+  <button id="viewGalleryBtn" type="button">
+    colors
+  </button>
+
+
+
+  <!-- footer -->
+  <footer>
+    <small class="footer-section">© 2025, WADHA.CO</small>
+  </footer>
+
+  <!-- JS code -->
+  <script>
+    document.getElementById('viewGalleryBtn').addEventListener('click', () => {
+      window.location.href = 'gallery.html'; // Update as needed
+    });
+
+    function goBack() {
+      if (window.history.length > 1 && document.referrer !== "") {
+        window.history.back();
+      } else {
+        window.location.href = 'bags.html'; // Set your fallback URL
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,396 +1,476 @@
- /* === PAGE BASICS === */
- body {
-   background: #fafbfc;
- }
+/* === PAGE BASICS === */
+body {
+  background: #fafbfc;
+}
 
- /* === SECTION & HEADER === */
- h3 {
-   text-align: center;
-   font-size: 20px;
-   font-weight: 100;
-   letter-spacing: 0.1px;
-   opacity: 0.6;
-   margin-bottom: 22px;
- }
+/* === SECTION & HEADER === */
+h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 0.1px;
+  opacity: 0.6;
+  margin-bottom: 22px;
+}
 
- /* === MAIN PRODUCT CONTAINER (card) === */
- .container {
-   display: flex;
-   flex-direction: row;
-   max-width: 1100px;
-   margin: 40px auto 0 auto;
-   background: #fff;
-   border-radius: 12px;
-   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
-   overflow: hidden;
- }
+/* === MAIN PRODUCT CONTAINER (card) === */
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
 
- /* === IMAGE SIDEBAR IN CONTAINER === */
- .image-section {
-   flex: 1.25 1 480px;
-   min-width: 240px;
-   padding: 38px 18px;
-   background: #f5f6fa;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
- }
+/* === IMAGE SIDEBAR IN CONTAINER === */
+.image-section {
+  flex: 1.25 1 480px;
+  min-width: 240px;
+  padding: 38px 18px;
+  background: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- /* === PRODUCT MAIN IMAGE BOX (gallery area) === */
- .main-img-wrapper {
-   width: 100%;
-   max-width: 440px;
-   height: 580px;
-   margin-bottom: 28px;
-   background: #eee;
-   border-radius: 12px;
-   overflow: hidden;
-   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
+/* === PRODUCT MAIN IMAGE BOX (gallery area) === */
+.main-img-wrapper {
+  width: 100%;
+  max-width: 440px;
+  height: 580px;
+  margin-bottom: 28px;
+  background: #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
- .main-img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   display: none;
-   cursor: zoom-in;
- }
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  cursor: zoom-in;
+}
 
- input[type="radio"],
- input[type="checkbox"] {
-   display: none;
- }
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
 
- /* Supports up to 6 images per gallery/section. Add more if needed, see below */
- input[id^="img1-"]:checked~.container .main-img-1,
- input[id^="img2-"]:checked~.container .main-img-2,
- input[id^="img3-"]:checked~.container .main-img-3,
- input[id^="img4-"]:checked~.container .main-img-4,
- input[id^="img5-"]:checked~.container .main-img-5,
- input[id^="img6-"]:checked~.container .main-img-6 {
-   display: block;
-   animation: fadeIn 0.5s;
- }
+/* === Show main image based on checked input (for 30 images) === */
+input[id^="img1-"]:checked~.container .main-img-1,
+input[id^="img2-"]:checked~.container .main-img-2,
+input[id^="img3-"]:checked~.container .main-img-3,
+input[id^="img4-"]:checked~.container .main-img-4,
+input[id^="img5-"]:checked~.container .main-img-5,
+input[id^="img6-"]:checked~.container .main-img-6,
+input[id^="img7-"]:checked~.container .main-img-7,
+input[id^="img8-"]:checked~.container .main-img-8,
+input[id^="img9-"]:checked~.container .main-img-9,
+input[id^="img10-"]:checked~.container .main-img-10,
+input[id^="img11-"]:checked~.container .main-img-11,
+input[id^="img12-"]:checked~.container .main-img-12,
+input[id^="img13-"]:checked~.container .main-img-13,
+input[id^="img14-"]:checked~.container .main-img-14,
+input[id^="img15-"]:checked~.container .main-img-15,
+input[id^="img16-"]:checked~.container .main-img-16,
+input[id^="img17-"]:checked~.container .main-img-17,
+input[id^="img18-"]:checked~.container .main-img-18,
+input[id^="img19-"]:checked~.container .main-img-19,
+input[id^="img20-"]:checked~.container .main-img-20,
+input[id^="img21-"]:checked~.container .main-img-21,
+input[id^="img22-"]:checked~.container .main-img-22,
+input[id^="img23-"]:checked~.container .main-img-23,
+input[id^="img24-"]:checked~.container .main-img-24,
+input[id^="img25-"]:checked~.container .main-img-25,
+input[id^="img26-"]:checked~.container .main-img-26,
+input[id^="img27-"]:checked~.container .main-img-27,
+input[id^="img28-"]:checked~.container .main-img-28,
+input[id^="img29-"]:checked~.container .main-img-29,
+input[id^="img30-"]:checked~.container .main-img-30 {
+  display: block;
+  animation: fadeIn 0.5s;
+}
 
- @keyframes fadeIn {
-   from {
-     opacity: 0;
-     transform: scale(1.06);
-   }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
 
-   to {
-     opacity: 1;
-     transform: scale(1);
-   }
- }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
- .color-bar {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 18px;
-   margin-top: 22px;
- }
+.color-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
 
- .color-dot {
-   width: 36px;
-   height: 36px;
-   border-radius: 50%;
-   border: 2.2px solid #e7e7e7;
-   cursor: pointer;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-   transition: border 0.15s, opacity 0.13s;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background: #fff;
-   outline: none;
-   opacity: 0.96;
- }
+.color-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2.2px solid #e7e7e7;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  transition: border 0.15s, opacity 0.13s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  outline: none;
+  opacity: 0.96;
+  flex-shrink: 0;
+}
 
- .color-dot img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   border-radius: 50%;
-   display: block;
-   opacity: 0.94;
- }
+.color-dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  opacity: 0.94;
+}
 
- .color-dot:hover,
- .color-dot:focus {
-   border: 2.2px solid #5c5c5c;
-   background: #f0f0f0;
-   opacity: 1;
-   transition: border 0.15s, background 0.15s, opacity 0.13s;
- }
+.color-dot:hover,
+.color-dot:focus {
+  border: 2.2px solid #5c5c5c;
+  background: #f0f0f0;
+  opacity: 1;
+  transition: border 0.15s, background 0.15s, opacity 0.13s;
+}
 
- input[id^="img1-"]:checked~.container .color-bar label[for^="img1-"],
- input[id^="img2-"]:checked~.container .color-bar label[for^="img2-"],
- input[id^="img3-"]:checked~.container .color-bar label[for^="img3-"],
- input[id^="img4-"]:checked~.container .color-bar label[for^="img4-"],
- input[id^="img5-"]:checked~.container .color-bar label[for^="img5-"],
- input[id^="img6-"]:checked~.container .color-bar label[for^="img6-"] {
-   border: 2.2px solid #5c5c5c;
-   opacity: 1;
- }
+/* === Active color-dot based on checked input (for 30 images) === */
+input[id^="img1-"]:checked~.container .color-bar label[for^="img1-"],
+input[id^="img2-"]:checked~.container .color-bar label[for^="img2-"],
+input[id^="img3-"]:checked~.container .color-bar label[for^="img3-"],
+input[id^="img4-"]:checked~.container .color-bar label[for^="img4-"],
+input[id^="img5-"]:checked~.container .color-bar label[for^="img5-"],
+input[id^="img6-"]:checked~.container .color-bar label[for^="img6-"],
+input[id^="img7-"]:checked~.container .color-bar label[for^="img7-"],
+input[id^="img8-"]:checked~.container .color-bar label[for^="img8-"],
+input[id^="img9-"]:checked~.container .color-bar label[for^="img9-"],
+input[id^="img10-"]:checked~.container .color-bar label[for^="img10-"],
+input[id^="img11-"]:checked~.container .color-bar label[for^="img11-"],
+input[id^="img12-"]:checked~.container .color-bar label[for^="img12-"],
+input[id^="img13-"]:checked~.container .color-bar label[for^="img13-"],
+input[id^="img14-"]:checked~.container .color-bar label[for^="img14-"],
+input[id^="img15-"]:checked~.container .color-bar label[for^="img15-"],
+input[id^="img16-"]:checked~.container .color-bar label[for^="img16-"],
+input[id^="img17-"]:checked~.container .color-bar label[for^="img17-"],
+input[id^="img18-"]:checked~.container .color-bar label[for^="img18-"],
+input[id^="img19-"]:checked~.container .color-bar label[for^="img19-"],
+input[id^="img20-"]:checked~.container .color-bar label[for^="img20-"],
+input[id^="img21-"]:checked~.container .color-bar label[for^="img21-"],
+input[id^="img22-"]:checked~.container .color-bar label[for^="img22-"],
+input[id^="img23-"]:checked~.container .color-bar label[for^="img23-"],
+input[id^="img24-"]:checked~.container .color-bar label[for^="img24-"],
+input[id^="img25-"]:checked~.container .color-bar label[for^="img25-"],
+input[id^="img26-"]:checked~.container .color-bar label[for^="img26-"],
+input[id^="img27-"]:checked~.container .color-bar label[for^="img27-"],
+input[id^="img28-"]:checked~.container .color-bar label[for^="img28-"],
+input[id^="img29-"]:checked~.container .color-bar label[for^="img29-"],
+input[id^="img30-"]:checked~.container .color-bar label[for^="img30-"] {
+  border: 2.2px solid #5c5c5c;
+  opacity: 1;
+}
 
- .fabric-section {
-   flex: 1.8 1 560px;
-   min-width: 200px;
-   max-width: 430px;
-   padding: 45px 36px 36px 26px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: flex-start;
-   background: none;
- }
+/* === FABRIC SECTION === */
+.fabric-section {
+  flex: 1.8 1 560px;
+  min-width: 200px;
+  max-width: 430px;
+  padding: 45px 36px 36px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: none;
+}
 
- .fabric-list {
-   list-style: none;
-   padding: 0;
-   margin: 0 auto;
-   width: 100%;
-   max-width: 320px;
-   background: none;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
- }
+.fabric-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- .fabric-item {
-   width: 100%;
-   margin-bottom: 14px;
- }
+.fabric-item {
+  width: 100%;
+  margin-bottom: 14px;
+}
 
- .fabric-radio {
-   display: none;
- }
+.fabric-radio {
+  display: none;
+}
 
- .fabric-label {
-   display: block;
-   background: rgba(200, 200, 200, 0.16);
-   color: #212121;
-   padding: 14px 20px;
-   font-size: 15px;
-   font-weight: 300;
-   opacity: 0.88;
-   border-radius: 10px;
-   cursor: pointer;
-   width: 100%;
-   text-align: center;
-   margin-bottom: 0;
-   transition: background 0.15s, opacity 0.14s;
-   user-select: none;
-   outline: none;
-   border: none;
- }
+.fabric-label {
+  display: block;
+  background: rgba(200, 200, 200, 0.16);
+  color: #212121;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.88;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0;
+  transition: background 0.15s, opacity 0.14s;
+  user-select: none;
+  outline: none;
+  border: none;
+}
 
- .fabric-radio:checked+.fabric-label,
- .fabric-label:focus {
-   background: rgba(180, 180, 180, 0.18);
-   opacity: 1;
- }
+.fabric-radio:checked+.fabric-label,
+.fabric-label:focus {
+  background: rgba(180, 180, 180, 0.18);
+  opacity: 1;
+}
 
- .child-list {
-   background: none;
-   margin: 0;
-   padding: 7px 0 0 0;
-   border-radius: 0;
-   display: none;
-   flex-direction: column;
-   align-items: center;
- }
+.child-list {
+  background: none;
+  margin: 0;
+  padding: 7px 0 0 0;
+  border-radius: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
 
- .fabric-radio:checked+.fabric-label+.child-list {
-   display: flex;
- }
+.fabric-radio:checked+.fabric-label+.child-list {
+  display: flex;
+}
 
- .child-list li {
-   font-size: 12px;
-   color: #232323;
-   font-weight: 300;
-   margin: 0 0 4px 0;
-   padding: 2px 10px;
-   min-width: 36px;
-   background: none;
-   border: none;
-   border-radius: 0;
-   text-align: center;
-   display: block;
-   cursor: pointer;
-   opacity: 0.83;
-   transition: color 0.13s, opacity 0.13s;
- }
+.child-list li {
+  font-size: 12px;
+  color: #232323;
+  font-weight: 300;
+  margin: 0 0 4px 0;
+  padding: 2px 10px;
+  min-width: 36px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  opacity: 0.83;
+  transition: color 0.13s, opacity 0.13s;
+}
 
- .child-list li:hover {
-   color: #000;
-   opacity: 1;
- }
+.child-list li:hover {
+  color: #000;
+  opacity: 1;
+}
 
- /* === MODAL ZOOM GALLERY === */
- .zoom-overlay {
-   display: none;
-   position: fixed;
-   z-index: 99999;
-   inset: 0;
-   background: rgba(20, 20, 20, 0.97);
-   align-items: center;
-   justify-content: center;
-   backdrop-filter: blur(1.5px);
- }
+.fabric-label {
+  transition: background 0.15s, color 0.15s, opacity 0.14s;
+}
 
- input[type="checkbox"]:checked~.zoom-overlay {
-   display: flex;
- }
+.fabric-label:hover,
+.fabric-label:focus {
+  background: #474545;
+  color: #fff9f9;
+  opacity: 1;
+}
 
- .zoom-img-box {
-   position: relative;
-   max-width: 98vw;
-   max-height: 92vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-radius: 28px;
-   background: transparent;
- }
+.fabric-radio:checked+.fabric-label {
+  background: #474545;
+  color: #fff9f9;
+  opacity: 1;
+}
 
- .zoom-img {
-   display: none;
-   max-width: 94vw;
-   max-height: 88vh;
-   border-radius: 22px;
-   background: #222;
-   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.23);
-   animation: fadeInZoom 0.27s;
- }
+/* === MODAL ZOOM GALLERY === */
+.zoom-overlay {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.97);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1.5px);
+}
 
- @keyframes fadeInZoom {
-   from {
-     opacity: 0;
-     transform: scale(1.03);
-   }
+input[type="checkbox"]:checked~.zoom-overlay {
+  display: flex;
+}
 
-   to {
-     opacity: 1;
-     transform: scale(1);
-   }
- }
+.zoom-img-box {
+  position: relative;
+  max-width: 98vw;
+  max-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px;
+  background: transparent;
+}
 
- input[id^="img1-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-1,
- input[id^="img2-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-2,
- input[id^="img3-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-3,
- input[id^="img4-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-4,
- input[id^="img5-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-5,
- input[id^="img6-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-6 {
-   display: block;
- }
+.zoom-img {
+  display: none;
+  max-width: 94vw;
+  max-height: 88vh;
+  border-radius: 22px;
+  background: #222;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.23);
+  animation: fadeInZoom 0.27s;
+}
 
- .close-zoom {
-   position: absolute;
-   top: 22px;
-   right: 26px;
-   width: 42px;
-   height: 42px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background: #fff;
-   border-radius: 50%;
-   font-size: 1.7rem;
-   color: #232323;
-   font-weight: 400;
-   border: none;
-   box-shadow: 0 4px 18px rgba(50, 50, 50, 0.14);
-   cursor: pointer;
-   opacity: 0.90;
-   transition: opacity 0.15s, background 0.15s, color 0.15s;
-   line-height: 1;
-   z-index: 30;
-   filter: none;
- }
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
 
- .close-zoom:hover,
- .close-zoom:focus {
-   background: #f3f3f3;
-   color: #000;
-   opacity: 1;
- }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
- @media (max-width:900px) {
-   .container {
-     flex-direction: column;
-   }
+/* === Show zoom image based on checked inputs (for 30 images) === */
+input[id^="img1-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-1,
+input[id^="img2-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-2,
+input[id^="img3-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-3,
+input[id^="img4-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-4,
+input[id^="img5-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-5,
+input[id^="img6-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-6,
+input[id^="img7-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-7,
+input[id^="img8-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-8,
+input[id^="img9-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-9,
+input[id^="img10-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-10,
+input[id^="img11-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-11,
+input[id^="img12-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-12,
+input[id^="img13-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-13,
+input[id^="img14-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-14,
+input[id^="img15-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-15,
+input[id^="img16-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-16,
+input[id^="img17-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-17,
+input[id^="img18-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-18,
+input[id^="img19-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-19,
+input[id^="img20-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-20,
+input[id^="img21-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-21,
+input[id^="img22-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-22,
+input[id^="img23-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-23,
+input[id^="img24-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-24,
+input[id^="img25-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-25,
+input[id^="img26-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-26,
+input[id^="img27-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-27,
+input[id^="img28-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-28,
+input[id^="img29-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-29,
+input[id^="img30-"]:checked~input[type="checkbox"]:checked~.zoom-overlay .zoom-img-30 {
+  display: block;
+}
 
-   .fabric-section {
-     max-width: 94vw;
-     padding: 26px 3vw;
-   }
+/* Close zoom button */
+.close-zoom {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  color: #232323;
+  font-weight: 400;
+  border: none;
+  box-shadow: 0 4px 18px rgba(50, 50, 50, 0.14);
+  cursor: pointer;
+  opacity: 0.90;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+  line-height: 1;
+  z-index: 30;
+  filter: none;
+}
 
-   .main-img-wrapper {
-     max-width: 320px;
-     height: 240px;
-   }
+.close-zoom:hover,
+.close-zoom:focus {
+  background: #f3f3f3;
+  color: #000;
+  opacity: 1;
+}
 
-   .fabric-list {
-     max-width: 360px;
-   }
+/* === RESPONSIVE STYLES === */
 
-   .zoom-img-box {
-     border-radius: 14px;
-   }
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
 
-   .zoom-img {
-     border-radius: 10px;
-   }
+  .fabric-section {
+    max-width: 94vw;
+    padding: 26px 3vw;
+  }
 
-   .close-zoom {
-     width: 34px;
-     height: 34px;
-     font-size: 1.2rem;
-     top: 8px;
-     right: 10px;
-   }
- }
+  .main-img-wrapper {
+    max-width: 320px;
+    height: 240px;
+  }
 
- @media (max-width:600px) {
-   .main-img-wrapper {
-     max-width: 95vw;
-     height: 70vw;
-     min-height: 90px;
-   }
+  .fabric-list {
+    max-width: 360px;
+  }
 
-   .fabric-list {
-     max-width: 98vw;
-   }
+  .zoom-img-box {
+    border-radius: 14px;
+  }
 
-   .fabric-label {
-     font-size: 14px;
-   }
+  .zoom-img {
+    border-radius: 10px;
+  }
 
-   .child-list li {
-     font-size: 12px;
-   }
- }
-/* ...fabric name hover after select... */
- .fabric-label {
-   /* ...your other styles... */
-   transition: background 0.15s, color 0.15s, opacity 0.14s;
- }
+  .close-zoom {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+    top: 8px;
+    right: 10px;
+  }
+}
 
- .fabric-label:hover,
- .fabric-label:focus {
-   background:#474545;
-   color: #fff9f9;
-   opacity: 1;
- }
+@media (max-width: 600px) {
+  .main-img-wrapper {
+    max-width: 95vw;
+    height: 70vw;
+    min-height: 90px;
+  }
 
- .fabric-radio:checked+.fabric-label {
-   background:#474545;
-   color: #fff9f9;
-   opacity: 1;
- }
+  .fabric-list {
+    max-width: 98vw;
+  }
+
+  .fabric-label {
+    font-size: 14px;
+  }
+
+  .child-list li {
+    font-size: 12px;
+  }
+}
